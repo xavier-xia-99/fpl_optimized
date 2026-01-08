@@ -1,0 +1,12 @@
+player_id,web_name,team_code,element_type,now_cost,event,points_md,is_captain,multiplier,starting_lineup,selected_by_percent,gw_points
+1,Raya,3,1,55,21,5.80,false,1,1,25.3,5.80
+5,Saliba,3,2,60,21,6.20,false,1,1,35.2,6.20
+6,Gabriel,3,2,60,21,5.80,false,1,1,28.4,5.80
+7,Van Dijk,14,2,62,21,5.20,false,1,1,22.1,5.20
+15,Salah,14,3,132,21,9.50,true,2,1,62.5,19.00
+16,Palmer,9,3,108,21,8.20,false,1,1,48.2,8.20
+17,Saka,3,3,102,21,7.50,false,1,1,42.1,7.50
+18,Fernandes,16,3,82,21,5.80,false,1,1,25.4,5.80
+25,Haaland,17,4,145,21,9.20,false,1,1,72.5,9.20
+26,Isak,19,4,88,21,7.50,false,1,1,42.1,7.50
+27,Watkins,2,4,82,21,6.20,false,1,1,28.5,6.20

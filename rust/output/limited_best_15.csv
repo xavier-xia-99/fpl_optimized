@@ -1,0 +1,16 @@
+player_id,web_name,team_code,element_type,now_cost,event,points_md,is_captain,multiplier,starting_lineup,selected_by_percent,gw_points
+1,Raya,3,1,55,21,5.80,false,1,1,25.3,5.80
+5,Saliba,3,2,60,21,6.20,false,1,1,35.2,6.20
+6,Gabriel,3,2,60,21,5.80,false,1,1,28.4,5.80
+9,Robinson,12,2,52,21,4.50,false,1,1,15.8,4.50
+15,Salah,14,3,132,21,9.50,true,2,1,62.5,19.00
+18,Fernandes,16,3,82,21,5.80,false,1,1,25.4,5.80
+24,Rogers,2,3,55,21,5.50,false,1,1,6.2,5.50
+20,Eze,11,3,68,21,5.20,false,1,1,12.3,5.20
+26,Isak,19,4,88,21,7.50,false,1,1,42.1,7.50
+29,Wood,5,4,62,21,6.00,false,1,1,15.4,6.00
+28,Jackson,9,4,78,21,5.80,false,1,1,18.2,5.80
+3,Flekken,8,1,40,21,3.50,false,0,0,2.1,0.00
+12,Aina,5,2,48,21,4.20,false,0,0,6.2,0.00
+11,Hall,19,2,48,21,3.80,false,0,0,8.5,0.00
+23,Maddison,18,3,72,21,4.50,false,0,0,8.5,0.00

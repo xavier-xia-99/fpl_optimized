@@ -5,7 +5,6 @@ edition = "2021"
 authors = ["FPL Optimizer Team"]
 description = "Fantasy Premier League squad optimization using Mixed Integer Linear Programming"
 license = "MIT"
-repository = "https://github.com/your-repo/fpl-optimizer"
 keywords = ["fpl", "fantasy-premier-league", "optimization", "milp", "linear-programming"]
 categories = ["algorithms", "mathematics"]
 
@@ -17,111 +16,29 @@ path = "src/lib.rs"
 name = "fpl"
 path = "src/main.rs"
 
-[features]
-default = ["cbc"]
-cbc = ["good_lp/coin_cbc"]
-highs = ["dep:highs"]
-gurobi = []  # Requires external Gurobi installation
-
 [dependencies]
-# ============================================
-# Solver Backends
-# ============================================
-# good_lp provides a solver-agnostic LP/MILP interface
-# Enable specific solver backends via features
-good_lp = { version = "1.8", default-features = false }
+# Solver backend - using good_lp with default solver
+good_lp = { version = "1.8", features = ["default"] }
 
-# HiGHS - Modern open-source solver (MIT licensed)
-# Often faster than CBC for medium-sized problems
-highs = { version = "1.5", optional = true }
-
-# ============================================
-# Async Runtime & HTTP Client
-# ============================================
-tokio = { version = "1.35", features = ["full"] }
-reqwest = { version = "0.11", features = ["json", "gzip"] }
-
-# ============================================
 # Serialization / Data Handling
-# ============================================
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 csv = "1.3"
 toml = "0.8"
 
-# ============================================
 # CLI Interface
-# ============================================
-clap = { version = "4.4", features = ["derive", "env", "cargo"] }
+clap = { version = "4.4", features = ["derive"] }
 
-# ============================================
 # Error Handling
-# ============================================
 thiserror = "1.0"
 anyhow = "1.0"
 
-# ============================================
-# Logging / Tracing
-# ============================================
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
-
-# ============================================
-# Utilities
-# ============================================
+# Random number generation
 rand = "0.8"
-chrono = { version = "0.4", features = ["serde"] }
-indexmap = { version = "2.1", features = ["serde"] }
-itertools = "0.12"
-
-# Rate limiting for API calls
-governor = "0.6"
-
-# Path handling
-directories = "5.0"
-
-# ============================================
-# Data Structures
-# ============================================
-# Efficient hash maps
-rustc-hash = "1.1"
-
-# ============================================
-# Parallelism (for iterative solving)
-# ============================================
-rayon = "1.8"
 
 [dev-dependencies]
-# Testing
-assert_approx_eq = "1.1"
 tempfile = "3.9"
-
-# Benchmarking
-criterion = { version = "0.5", features = ["html_reports"] }
-
-# Property-based testing
-proptest = "1.4"
-
-# Test fixtures
-rstest = "0.18"
-
-# Mocking HTTP requests
-wiremock = "0.5"
-tokio-test = "0.4"
 
 [profile.release]
 lto = true
 codegen-units = 1
-panic = "abort"
-
-[profile.bench]
-lto = true
-codegen-units = 1
-
-[[bench]]
-name = "solver_benchmark"
-harness = false
-
-[[bench]]
-name = "constraint_benchmark"
-harness = false
