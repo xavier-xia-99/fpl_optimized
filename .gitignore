@@ -9,3 +9,6 @@ fplreview.py
 simulator.py
 *.tmp.*
 
+# Rust build output (repo root)
+**/target/*
+/target/*
