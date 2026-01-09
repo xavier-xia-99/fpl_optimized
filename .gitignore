@@ -10,4 +10,5 @@ simulator.py
 *.tmp.*
 
 # Rust build output (repo root)
-/target/
+rust/target/*
+/target/*
