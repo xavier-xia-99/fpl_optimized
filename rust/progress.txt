@@ -1,0 +1,49 @@
+# FPL Optimizer Rust Implementation - Progress & Learnings
+# =========================================================
+# This file persists learnings, GOTCHAs, and incremental progress
+# across multiple agent iterations. Both agents should update this file.
+# 
+# Format:
+# [TIMESTAMP] [AGENT] [STATUS] Message
+# =========================================================
+
+## INITIAL STATE (2026-01-09)
+- Project structure exists with full implementation
+- 42 unit tests all passing
+- CBC solver backend working with good_lp
+
+## ENVIRONMENT SETUP
+[2026-01-09] [MASTER] [SUCCESS] CBC solver installed via: sudo apt-get install coinor-libcbc-dev coinor-cbc
+[2026-01-09] [MASTER] [SUCCESS] cargo build passes
+[2026-01-09] [MASTER] [SUCCESS] cargo test passes (42/42 tests)
+
+## GOTCHAS & BLOCKERS
+1. CBC library must be installed on system: coinor-libcbc-dev coinor-cbc
+2. The TODO_CHECKLIST.md is NOT in sync with todo.json (checklist shows all red, but impl is done)
+
+## KEY LEARNINGS
+1. good_lp abstracts the solver, currently using CBC backend
+2. All core types implemented: Position, Cost, Player, Team, Gameweek, Projection
+3. All problems implemented: NoLimit, Limited, WeightedBench, BenchBoost, Differential, SetAndForget, Iterative
+4. CLI fully functional with clap
+
+## CURRENT FOCUS
+- Need to audit TODO_CHECKLIST.md against actual implementation
+- Need to add more comprehensive unit tests
+- Need to verify output matches Python solver
+
+## VERIFICATION CHECKLIST
+[ ] TODO_CHECKLIST.md synced with actual state
+[ ] All problem types produce valid output
+[ ] CSV output format matches Python
+[ ] JSON output format matches Python
+[ ] Performance benchmarks documented
+[ ] Integration tests added
+[ ] Documentation updated
+
+## AGENT HANDOFFS
+# Use this section to pass context between agents
+# Format: [TIMESTAMP] [FROM_AGENT] -> [TO_AGENT]: Message
+
+---
+END OF PROGRESS LOG

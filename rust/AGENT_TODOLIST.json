@@ -1,0 +1,142 @@
+{
+  "project": "FPL Optimizer - Rust Implementation",
+  "last_updated": "2026-01-09",
+  "active_agents": ["implementation", "testing"],
+  "worktrees": {
+    "implementation": "/workspace/worktree-impl",
+    "testing": "/workspace/worktree-test"
+  },
+  "tasks": [
+    {
+      "id": "AUDIT-001",
+      "title": "Audit TODO_CHECKLIST.md against actual implementation",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "high",
+      "description": "The TODO_CHECKLIST.md shows all items as 'Not Started' but the implementation is mostly complete. Need to update the checklist to reflect actual state.",
+      "acceptance_criteria": ["Checklist reflects actual implementation state", "All completed items marked as 🟢"]
+    },
+    {
+      "id": "TEST-001",
+      "title": "Verify all existing tests pass",
+      "status": "completed",
+      "assigned_to": "testing",
+      "priority": "high",
+      "description": "Run cargo test and verify all 42 tests pass",
+      "acceptance_criteria": ["All 42 tests pass"],
+      "result": "42/42 tests passing"
+    },
+    {
+      "id": "TEST-002",
+      "title": "Add unit tests for types module",
+      "status": "pending",
+      "assigned_to": "testing",
+      "priority": "medium",
+      "description": "Ensure comprehensive unit test coverage for all types: Position, Cost, Player, Team, Gameweek, Projection",
+      "acceptance_criteria": [
+        "Position enum tests (all variants, min/max play, squad select)",
+        "Cost newtype tests (arithmetic, conversions)",
+        "Player struct tests",
+        "Team tests",
+        "Gameweek validation tests",
+        "Projection tests"
+      ]
+    },
+    {
+      "id": "TEST-003",
+      "title": "Add unit tests for constraints module",
+      "status": "pending",
+      "assigned_to": "testing",
+      "priority": "medium",
+      "description": "Test all constraint implementations",
+      "acceptance_criteria": [
+        "Budget constraint tests",
+        "Team limit constraint tests",
+        "Position constraint tests",
+        "Captain constraint tests",
+        "Differential constraint tests"
+      ]
+    },
+    {
+      "id": "TEST-004",
+      "title": "Add integration tests for problem types",
+      "status": "pending",
+      "assigned_to": "testing",
+      "priority": "high",
+      "description": "Integration tests verifying each problem type produces valid, optimal solutions",
+      "acceptance_criteria": [
+        "NoLimitBest11 integration test",
+        "LimitedBestSquad integration test",
+        "WeightedBench integration test",
+        "BenchBoost integration test",
+        "Differential integration test",
+        "SetAndForget integration test",
+        "Iterative integration test"
+      ]
+    },
+    {
+      "id": "IMPL-001",
+      "title": "Fix compiler warnings",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "low",
+      "description": "Fix dead_code warnings for unused functions",
+      "acceptance_criteria": ["No compiler warnings"]
+    },
+    {
+      "id": "IMPL-002",
+      "title": "Verify CSV output format matches Python",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "medium",
+      "description": "Ensure the CSV output format exactly matches the Python implementation",
+      "acceptance_criteria": ["Column ordering matches", "Data types match", "Calculated fields correct"]
+    },
+    {
+      "id": "IMPL-003",
+      "title": "Verify JSON output format matches Python",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "medium",
+      "description": "Ensure the iterative JSON output format matches Python",
+      "acceptance_criteria": ["JSON structure matches", "All fields present"]
+    },
+    {
+      "id": "IMPL-004",
+      "title": "Add MPS export functionality",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "low",
+      "description": "Add ability to export optimization models in MPS format",
+      "acceptance_criteria": ["MPS files can be generated", "CBC can read exported files"]
+    },
+    {
+      "id": "TEST-005",
+      "title": "Add property-based tests",
+      "status": "pending",
+      "assigned_to": "testing",
+      "priority": "low",
+      "description": "Add property-based tests using proptest",
+      "acceptance_criteria": [
+        "Budget constraint never exceeded",
+        "Position counts always valid",
+        "Team limits always respected"
+      ]
+    },
+    {
+      "id": "IMPL-005",
+      "title": "Performance benchmarks",
+      "status": "pending",
+      "assigned_to": "implementation",
+      "priority": "medium",
+      "description": "Add benchmark tests to measure performance vs Python",
+      "acceptance_criteria": ["Benchmarks for each problem type", "Comparison with Python timing documented"]
+    }
+  ],
+  "sync_instructions": {
+    "how_to_claim": "Change status to 'in_progress' and set assigned_to to your agent name",
+    "how_to_complete": "Change status to 'completed' and add result field",
+    "how_to_block": "Change status to 'blocked' and add blocker_reason field",
+    "coordination": "Use progress.txt for handoff notes between agents"
+  }
+}
